@@ -1,0 +1,630 @@
+# Translation of Plugins - YITH WooCommerce Badge Management - Stable (latest release) in Japanese
+# This file is distributed under the same license as the Plugins - YITH WooCommerce Badge Management - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2023-09-14 12:57:33+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: GlotPress/4.0.0-beta.2\n"
+"Language: ja_JP\n"
+"Project-Id-Version: Plugins - YITH WooCommerce Badge Management - Stable (latest release)\n"
+
+#: plugin-fw/templates/panel/panel-header.php:27
+#: plugin-fw/templates/panel/v2/panel-header.php:22
+msgid ":) Thanks!"
+msgstr "ありがとうございます !"
+
+#: plugin-fw/templates/panel/panel-header.php:23
+#: plugin-fw/templates/panel/v2/panel-header.php:18
+msgid "We need your support"
+msgstr "皆さんのサポートが必要です"
+
+#: plugin-fw/templates/sysinfo/tabs/main.php:35
+msgid "Output IP Address"
+msgstr "出力 IP アドレス"
+
+#: plugin-fw/templates/sysinfo/tabs/main.php:26
+msgid "Site URL"
+msgstr "サイト URL"
+
+#: plugin-fw/includes/class-yith-system-status.php:487
+msgid "N/A"
+msgstr "該当なし"
+
+#: plugin-fw/includes/class-yith-system-status.php:117
+msgid "Iconv Module"
+msgstr "Iconv モジュール"
+
+#: plugin-fw/includes/class-yith-system-status.php:482
+msgid "Disabled"
+msgstr "無効"
+
+#: plugin-fw/includes/class-yith-system-status.php:185
+msgid "WooCommerce"
+msgstr "WooCommerce"
+
+#: plugin-fw/includes/class-yith-system-status.php:332
+msgid "Warning!"
+msgstr "警告 !"
+
+#: plugin-fw/includes/class-yith-system-status.php:482
+msgid "Enabled"
+msgstr "有効"
+
+#: plugin-fw/includes/class-yith-system-status.php:119
+msgid "URL FOpen"
+msgstr "URL FOpen"
+
+#: plugin-fw/includes/class-yith-system-status.php:118
+msgid "OPCache Save Comments"
+msgstr "OPCache Save Comments"
+
+#: plugin-fw/includes/class-yith-system-status.php:116
+msgid "GD Library"
+msgstr "GD ライブラリ"
+
+#: plugin-fw/includes/class-yith-system-status.php:115
+msgid "ImageMagick Version"
+msgstr "ImageMagick バージョン"
+
+#: plugin-fw/includes/class-yith-system-status.php:114
+msgid "MultiByte String"
+msgstr "マルチバイト文字列"
+
+#: plugin-fw/includes/class-yith-system-status.php:113
+msgid "SimpleXML"
+msgstr "SimpleXML"
+
+#: plugin-fw/includes/class-yith-system-status.php:112
+msgid "WordPress Cron"
+msgstr "WordPress Cron"
+
+#: plugin-fw/includes/class-yith-system-status.php:111
+msgid "TLS Version"
+msgstr "TLS バージョン"
+
+#: plugin-fw/includes/class-yith-system-status.php:110
+msgid "PHP Version"
+msgstr "PHP バージョン"
+
+#: plugin-fw/includes/class-yith-system-status.php:109
+msgid "Available Memory"
+msgstr "利用可能メモリ"
+
+#: plugin-fw/includes/class-yith-system-status.php:108
+msgid "WooCommerce Version"
+msgstr "WooCommerce バージョン"
+
+#: plugin-fw/includes/class-yith-system-status.php:107
+msgid "WordPress Version"
+msgstr "WordPress バージョン"
+
+#: plugin-fw/includes/class-yith-system-status.php:136
+#: plugin-fw/includes/class-yith-system-status.php:137
+#: plugin-fw/templates/sysinfo/system-information-panel.php:11
+msgid "System Status"
+msgstr "システム状況"
+
+#. translators: 1. user display name; 2. user ID; 3. user email.
+#: plugin-fw/templates/fields/ajax-customers.php:68
+#: plugin-fw/templates/fields/ajax-customers.php:79
+msgid "%1$s (#%2$s &ndash; %3$s)"
+msgstr "%1$s (#%2$s – %3$s)"
+
+#: plugin-fw/includes/class-yith-system-status.php:565
+msgid "Contact your hosting company in order to enable it."
+msgstr "有効化するにはホスティング会社に連絡してください。"
+
+#: plugin-fw/includes/class-yith-system-status.php:546
+#: plugin-fw/includes/class-yith-system-status.php:552
+msgid "Contact your hosting company in order to update it."
+msgstr "更新するにはホスティング会社に問い合わせてください。"
+
+#: plugin-fw/includes/class-yith-system-status.php:542
+msgid "Update it to the latest version in order to benefit of all new features and security updates."
+msgstr "すべての新機能とセキュリティ更新プログラムを利用するには最新バージョンに更新してください。"
+
+#. translators: %s recommended memory amount
+#: plugin-fw/includes/class-yith-system-status.php:588
+msgid "For optimal functioning of our plugins, we suggest setting at least %s of available memory"
+msgstr "プラグインの最適な動作のため、使用可能なメモリの少なくとも%sを設定することをおすすめします"
+
+#: plugin-fw/templates/sysinfo/system-information-panel.php:28
+msgid "YITH System Information"
+msgstr "YITH システム情報"
+
+#. translators: %1$s open link tag, %2$s open link tag
+#: plugin-fw/includes/class-yith-system-status.php:336
+msgid "The system check has detected some compatibility issues on your installation.%1$sClick here%2$s to know more"
+msgstr "システムチェックで、インストールに互換性の問題が検出されました。%1$s詳細については、ここをクリック%2$sしてください"
+
+#. translators: %1$s opening link tag, %2$s closing link tag
+#: plugin-fw/includes/class-yith-system-status.php:569
+#: plugin-fw/includes/class-yith-system-status.php:591
+msgid "Read more %1$shere%2$s or contact your hosting company in order to increase it."
+msgstr "上限を上げるには%1$sここで%2$s詳細を読むか、ホスティング会社に問い合わせてください。"
+
+#. translators: %1$s code, %2$s file name
+#: plugin-fw/includes/class-yith-system-status.php:557
+msgid "Remove %1$s from %2$s file"
+msgstr "%1$s を %2$s ファイルから削除"
+
+#. translators: %1$s plugin name, %2$s version number
+#: plugin-fw/includes/class-yith-system-status.php:519
+msgid "%1$s needs at least %2$s version"
+msgstr "%1$s にはバージョン%2$s以降が必要です"
+
+#. translators: %1$s plugin name, %2$s required memory amount
+#: plugin-fw/includes/class-yith-system-status.php:516
+msgid "%1$s needs at least %2$s of available memory"
+msgstr "%1$s には最低 %2$s の使用可能メモリが必要です"
+
+#. translators: %1$s plugin name, %2$s requirement name
+#: plugin-fw/includes/class-yith-system-status.php:513
+msgid "%1$s needs %2$s enabled"
+msgstr "%1$s には %2$s の有効化が必要です"
+
+#: plugin-fw/templates/fields/date-format.php:65
+msgid "Custom:"
+msgstr "カスタム:"
+
+#: plugin-fw/templates/fields/select-buttons.php:20
+msgid "Remove All"
+msgstr "すべて削除"
+
+#: plugin-fw/templates/fields/select-buttons.php:19
+msgid "Add All"
+msgstr "すべて追加"
+
+#: plugin-fw/includes/class-yith-dashboard.php:63
+msgid "An error has occurred, which probably means the feed is down. Try again later."
+msgstr "エラーが発生しました。ご指定のフィードは現在利用できないようです。後ほどもう一度お試しください。"
+
+#: plugin-fw/includes/class-yith-dashboard.php:56
+msgid "RSS Error:"
+msgstr "RSS エラー:"
+
+#: plugin-fw/includes/class-yith-dashboard.php:137
+msgctxt "Button label"
+msgid "Close"
+msgstr "閉じる"
+
+#: plugin-fw/includes/class-yith-dashboard.php:97
+msgctxt "Plugin FW"
+msgid "Latest update released on"
+msgstr "最新アップデートリリース:"
+
+#: plugin-fw/includes/class-yith-dashboard.php:96
+msgctxt "Plugin FW"
+msgid "View Changelog"
+msgstr "変更履歴を表示"
+
+#: plugin-fw/includes/class-yith-dashboard.php:36
+msgid "Latest news from YITH Blog"
+msgstr "YITH ブログからの最新ニュース"
+
+#: plugin-fw/includes/class-yith-dashboard.php:35
+msgid "YITH Latest Updates"
+msgstr "YITH 最新ニュース"
+
+#: plugin-fw/includes/builders/gutenberg/class-yith-gutenberg.php:156
+msgctxt "[gutenberg]: Category Name"
+msgid "YITH"
+msgstr "YITH"
+
+#: plugin-fw/yit-plugin.php:242
+msgid "License"
+msgstr "ライセンス"
+
+#. Author of the plugin
+msgid "YITH"
+msgstr "YITH"
+
+#: plugin-fw/yit-plugin.php:238
+msgctxt "Action links"
+msgid "Settings"
+msgstr "設定"
+
+#: plugin-fw/yit-plugin.php:97
+msgctxt "Plugin Row Meta"
+msgid "Premium version"
+msgstr "プレミアムバージョン"
+
+#: plugin-fw/yit-plugin.php:93
+msgctxt "Plugin Row Meta"
+msgid "Support"
+msgstr "サポート"
+
+#: plugin-fw/yit-plugin.php:89
+msgctxt "Plugin Row Meta"
+msgid "Documentation"
+msgstr "ドキュメンテーション"
+
+#: plugin-fw/yit-plugin.php:85
+msgctxt "Plugin Row Meta"
+msgid "Live Demo"
+msgstr "ライブデモ"
+
+#: plugin-fw/includes/privacy/class-yith-privacy.php:106
+msgctxt "Privacy Policy Content"
+msgid "Payments"
+msgstr "支払い"
+
+#: plugin-fw/includes/privacy/class-yith-privacy.php:103
+msgctxt "Privacy Policy Content"
+msgid "What we share with others"
+msgstr "外部と共有する内容"
+
+#: plugin-fw/includes/privacy/class-yith-privacy.php:100
+msgctxt "Privacy Policy Content"
+msgid "Who on our team has access"
+msgstr "当チーム内でアクセスできるメンバー"
+
+#: plugin-fw/includes/privacy/class-yith-privacy.php:97
+msgctxt "Privacy Policy Content"
+msgid "What we collect and store"
+msgstr "収集し保存する内容"
+
+#: plugin-fw/includes/privacy/class-yith-privacy.php:93
+msgctxt "Privacy Policy Content"
+msgid "This sample language includes the basics around what personal data your store may be collecting, storing and sharing, as well as who may have access to that data. Depending on what settings are enabled and which additional plugins are used, the specific information shared by your store will vary. We recommend consulting with a lawyer when deciding what information to disclose on your privacy policy."
+msgstr "このサンプル言語には、ストアが収集、保存、共有できる個人データ、およびそのデータにアクセスできるユーザーに関する基本が含まれています。有効済み設定と使用する追加のプラグインに応じて、ストアで共有される特定の情報は異なります。プライバシーポリシーに関する開示情報を決定する際には、弁護士に相談することをお勧めします。"
+
+#: plugin-fw/includes/privacy/class-yith-privacy.php:61
+msgctxt "Privacy Policy Guide Title"
+msgid "YITH Plugins"
+msgstr "YITH プラグイン"
+
+#: plugin-fw/templates/fields/icons.php:78
+msgid "Set Default"
+msgstr "初期設定を指定"
+
+#. translators: %s: Badge ID.
+#: includes/class-yith-wcbm-badges.php:163
+msgid "Error while duplicating badge: badge #%s not found"
+msgstr "バッジ複製中にエラーが発生しました: バッジ #%s が見つかりません"
+
+#: plugin-fw/includes/class-yit-plugin-panel.php:559
+#: plugin-fw/includes/class-yit-plugin-panel.php:562
+msgid "How to install premium version"
+msgstr "プレミアム版のインストール方法"
+
+#: plugin-fw/templates/fields/image-gallery.php:34
+msgid "Add to gallery"
+msgstr "ギャラリーに追加"
+
+#: views/metaboxes/badge-settings.php:58
+msgid "Background Color"
+msgstr "背景色"
+
+#: plugin-fw/templates/fields/customtabs.php:25
+#: plugin-fw/templates/fields/customtabs.php:68
+msgid "Remove"
+msgstr "削除"
+
+#: plugin-options/metaboxes/badge-metabox.php:42
+#: plugin-options/metaboxes/badge-metabox.php:61
+#: views/metaboxes/badge-settings.php:36
+msgid "Text"
+msgstr "テキスト"
+
+#: plugin-options/metaboxes/badge-metabox.php:84
+#: views/metaboxes/badge-settings.php:79
+msgid "Width"
+msgstr "幅"
+
+#: plugin-fw/includes/class-yit-plugin-panel.php:90
+msgid "Settings"
+msgstr "設定"
+
+#: plugin-options/metaboxes/badge-metabox.php:85
+#: views/metaboxes/badge-settings.php:80
+msgid "Height"
+msgstr "高さ"
+
+#: plugin-fw/templates/fields/customtabs.php:34
+#: plugin-fw/templates/fields/customtabs.php:76
+msgid "Name"
+msgstr "名前"
+
+#: views/metaboxes/badge-preview.php:14 views/metaboxes/badge-settings.php:127
+msgid "Preview"
+msgstr "プレビュー"
+
+#: includes/class-yith-wcbm-admin.php:504
+msgid "Plugin Documentation"
+msgstr "プラグインドキュメント"
+
+#: plugin-fw/includes/class-yit-plugin-panel-woocommerce.php:606
+msgid "The changes you have made will be lost if you leave this page."
+msgstr "このページから離れると変更内容は失われます。"
+
+#: plugin-fw/includes/class-yit-plugin-panel.php:89
+msgid "Plugin Settings"
+msgstr "プラグイン設定"
+
+#: plugin-fw/includes/class-yit-plugin-subpanel.php:127
+#: plugin-fw/templates/panel/panel-content-page.php:29
+msgid "Save Changes"
+msgstr "変更を保存"
+
+#: plugin-fw/includes/class-yit-assets.php:262
+#: plugin-fw/includes/class-yit-plugin-subpanel.php:134
+#: plugin-fw/templates/panel/panel-content-page.php:14
+msgid "If you continue with this action, you will reset all options in this page."
+msgstr "操作を続行すると、このページのオプションがすべてリセットされます。"
+
+#: plugin-fw/includes/class-yit-plugin-subpanel.php:137
+#: plugin-fw/templates/panel/panel-content-page.php:38
+msgid "Reset to default"
+msgstr "デフォルトに戻す"
+
+#: plugin-fw/includes/class-yit-plugin-panel.php:1557
+msgid "Settings saved"
+msgstr "設定を保存"
+
+#: plugin-fw/includes/class-yit-plugin-panel.php:1558
+msgid "Settings reset"
+msgstr "設定をリセット"
+
+#: plugin-fw/includes/class-yit-plugin-panel.php:1559
+msgid "Element deleted correctly."
+msgstr "要素を削除しました。"
+
+#: plugin-fw/includes/class-yit-plugin-panel.php:1560
+msgid "Element updated correctly."
+msgstr "要素を更新しました。"
+
+#: plugin-fw/includes/class-yit-plugin-panel.php:1562
+msgid "Database imported correctly."
+msgstr "データベースのインポートを完了しました。"
+
+#: plugin-fw/includes/class-yit-plugin-panel.php:1564
+msgid "The added file is not valid."
+msgstr "追加されたファイルは有効ではありません。"
+
+#: plugin-fw/includes/class-yit-plugin-panel.php:1565
+msgid "Sorry, import is disabled."
+msgstr "インポート機能は停止中です。"
+
+#: plugin-fw/includes/class-yit-plugin-panel.php:1566
+msgid "Sorting successful."
+msgstr "並べ替え完了。"
+
+#: plugin-fw/includes/class-yit-pointers.php:80
+msgid "Plugins Activated"
+msgstr "プラグイン有効化済み"
+
+#: plugin-fw/includes/class-yit-pointers.php:96
+msgid "Plugins Upgraded"
+msgstr "プラグインを更新しました"
+
+#: plugin-fw/templates/fields/upload.php:34
+#: plugin-fw/templates/panel/woocommerce/woocommerce-upload.php:37
+msgid "Upload"
+msgstr "アップロード"
+
+#: plugin-fw/templates/fields/customtabs.php:17
+msgid "Close all"
+msgstr "すべて閉じる"
+
+#: plugin-fw/templates/fields/customtabs.php:17
+msgid "Expand all"
+msgstr "すべて展開"
+
+#: plugin-fw/templates/fields/customtabs.php:40
+#: plugin-fw/templates/fields/customtabs.php:81
+msgid "Value"
+msgstr "値"
+
+#: plugin-fw/templates/fields/customtabs.php:41
+#: plugin-fw/templates/fields/customtabs.php:82
+msgid "Content of the tab. (HTML is supported)"
+msgstr "タブのコンテンツ (HTML 利用可能) 。"
+
+#: plugin-fw/templates/fields/customtabs.php:52
+msgid "Add custom product tab"
+msgstr "カスタム商品タブを追加"
+
+#: plugin-fw/templates/fields/customtabs.php:93
+msgid "Do you want to remove the custom tab?"
+msgstr "カスタムタブを削除しますか ?"
+
+#: plugin-fw/templates/fields/image-gallery.php:36
+msgid "Delete image"
+msgstr "画像を削除"
+
+#: plugin-fw/templates/fields/image-gallery.php:33
+msgid "Add Images to Gallery"
+msgstr "ギャラリーに画像を追加"
+
+#: plugin-fw/templates/fields/image-gallery.php:35
+msgid "Add images"
+msgstr "画像を追加"
+
+#: plugin-fw/templates/fields/image-gallery.php:26
+#: plugin-fw/templates/fields/image-gallery.php:37
+msgid "Delete"
+msgstr "削除"
+
+#: plugin-fw/templates/fields/sidebars.php:20
+msgid "Left sidebar"
+msgstr "左サイドバー"
+
+#: plugin-fw/templates/fields/sidebars.php:26
+#: plugin-fw/templates/fields/sidebars.php:29
+msgid "No sidebar"
+msgstr "サイドバーなし"
+
+#: plugin-fw/templates/fields/sidebars.php:23
+msgid "Right sidebar"
+msgstr "右サイドバー"
+
+#: plugin-fw/templates/fields/sidebars.php:41
+#: plugin-fw/templates/fields/sidebars.php:56
+msgid "Choose a sidebar"
+msgstr "サイドバーを選択"
+
+#: plugin-fw/templates/fields/sidebars.php:39
+msgid "Left Sidebar"
+msgstr "左サイドバー"
+
+#: plugin-fw/templates/fields/sidebars.php:54
+msgid "Right Sidebar"
+msgstr "右サイドバー"
+
+#: plugin-fw/templates/fields/upload.php:39
+msgid "Reset"
+msgstr "リセット"
+
+#: plugin-fw/templates/panel/v2/panel-content-page.php:58
+#: plugin-fw/templates/panel/v2/woocommerce/woocommerce-form.php:70
+#: plugin-fw/templates/panel/woocommerce/woocommerce-form.php:41
+msgid "Reset Defaults"
+msgstr "デフォルトに戻す"
+
+#: views/metaboxes/badge-settings.php:32
+msgid "Text Options"
+msgstr "テキスト設定"
+
+#: views/metaboxes/badge-settings.php:22
+msgid "Image Badge"
+msgstr "画像バッジ"
+
+#: plugin-options/metaboxes/badge-metabox.php:17
+#: views/metaboxes/badge-settings.php:21
+msgid "Text Badge"
+msgstr "テキストバッジ"
+
+#: plugin-options/metaboxes/product-badge-metabox.php:11
+msgid "Product Badge"
+msgstr "商品バッジ"
+
+#: plugin-options/metaboxes/badge-metabox.php:11
+msgid "Badge Options"
+msgstr "バッジ設定"
+
+#: views/metaboxes/badge-settings.php:54
+msgid "Style Options"
+msgstr "スタイル設定"
+
+#: views/metaboxes/badge-settings.php:66
+msgid "Size (pixel)"
+msgstr "サイズ (ピクセル)"
+
+#: plugin-options/metaboxes/badge-metabox.php:138
+#: views/metaboxes/badge-settings.php:107
+#: views/metaboxes/badge-settings.php:111
+msgid "Position"
+msgstr "位置"
+
+#: views/metaboxes/badge-settings.php:91
+msgid "Select the Image Badge"
+msgstr "画像バッジを選択"
+
+#: includes/class-yith-wcbm-post-types.php:52
+#: includes/class-yith-wcbm-post-types.php:56
+msgid "Edit Badge"
+msgstr "バッジを編集"
+
+#: includes/class-yith-wcbm-post-types.php:53
+#: includes/class-yith-wcbm-post-types.php:58
+msgid "View Badge"
+msgstr "バッジを表示"
+
+#: includes/class-yith-wcbm-post-types.php:54
+msgid "Badge not found"
+msgstr "バッジが見つかりません"
+
+#: includes/class-yith-wcbm-post-types.php:55
+msgid "Badge not found in trash"
+msgstr "ゴミ箱にバッジは見つかりませんでした"
+
+#: includes/class-yith-wcbm-post-types.php:49
+msgid "Badge"
+msgstr "バッジ"
+
+#: includes/class-yith-wcbm-admin.php:339
+#: includes/class-yith-wcbm-post-types.php:48
+msgid "Badges"
+msgstr "バッジ"
+
+#: includes/class-yith-wcbm-admin.php:512
+msgid "Live Demo"
+msgstr "ライブデモ"
+
+#: includes/class-yith-wcbm-admin.php:508
+msgid "Plugin Site"
+msgstr "プラグインサイト"
+
+#: includes/class-yith-wcbm-post-types.php:50
+msgid "Add Badge"
+msgstr "新しいバッジ"
+
+#. Plugin Name of the plugin
+msgid "YITH WooCommerce Badge Management"
+msgstr "YITH WooCommerce Badge Management"
+
+#: views/metaboxes/badge-settings.php:117
+msgid "bottom-left"
+msgstr "左下"
+
+#: views/metaboxes/badge-settings.php:116
+msgid "top-right"
+msgstr "右上"
+
+#: views/metaboxes/badge-settings.php:115
+msgid "top-left"
+msgstr "左上"
+
+#: views/metaboxes/badge-settings.php:118
+msgid "bottom-right"
+msgstr "右下"
+
+#. Plugin URI of the plugin
+msgid "https://yithemes.com/themes/plugins/yith-woocommerce-badges-management/"
+msgstr "https://yithemes.com/themes/plugins/yith-woocommerce-badges-management/"
+
+#: includes/class-yith-wcbm-admin.php:500
+msgid "Your Inspiration Themes"
+msgstr "あなたのインスピレーションのテーマ"
+
+#: init.php:31
+msgid "YITH WooCommerce Badge Management is enabled but not effective. It requires WooCommerce in order to work."
+msgstr "YITH WooCommerce Badge Management は有効になっていますが効果がありません。動作するには WooCommerce が必要です。"
+
+#: plugin-fw/includes/class-yit-plugin-panel.php:1563
+msgid "An error has occurred during import. Please try again."
+msgstr "インポート中にエラーが発生しました。もう一度お試しください。"
+
+#: plugin-fw/includes/class-yit-plugin-panel.php:1556
+msgid "The element you have entered already exists. Please, enter another name."
+msgstr "入力した要素がすでに存在しています。他の名前を入力してください。"
+
+#: plugin-fw/includes/class-yit-assets.php:261
+#: plugin-fw/includes/class-yit-plugin-subpanel.php:134
+#: plugin-fw/templates/panel/panel-content-page.php:14
+msgid "Are you sure?"
+msgstr "本当に実行しますか ?"
+
+#: plugin-options/settings-options.php:13
+msgid "General Options"
+msgstr "全般設定"
+
+#: views/metaboxes/badge-settings.php:44
+msgid "Text Color"
+msgstr "テキストの色"
+
+#: plugin-fw/includes/class-yith-system-status.php:177
+msgid "YITH Plugins"
+msgstr "YITH プラグイン"
+
+#. Author URI of the plugin
+msgid "https://yithemes.com/"
+msgstr "https://yithemes.com/"
+
+#: plugin-fw/templates/fields/ajax-products.php:16
+msgid "Search for a product..."
+msgstr "商品を検索 ..."
