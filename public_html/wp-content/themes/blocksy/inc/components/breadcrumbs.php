@@ -756,6 +756,7 @@ class BreadcrumbsBuilder
 					$url = str_replace('/product-category', '', $items[$i]['url']);
 					
 					$response = wp_remote_get($url);
+					
 					if (is_array($response) && !is_wp_error($response)) {
 						$url = $items[$i]['url'];
 					} 
