@@ -2,8 +2,10 @@
 
 namespace Blocksy;
 
-class BreadcrumbsBuilder {
-	public function mount_shortcode() {
+class BreadcrumbsBuilder
+{
+	public function mount_shortcode()
+	{
 		call_user_func(
 			'add_' . 'shortcode',
 			'blocksy_breadcrumbs',
@@ -19,7 +21,8 @@ class BreadcrumbsBuilder {
 	 * Determine the current frontend page location, in creates the breadcrumbs array
 	 * @return array
 	 */
-	private function build_breadcrumbs() {
+	private function build_breadcrumbs()
+	{
 		if (is_admin()) {
 			return [];
 		}
@@ -90,7 +93,7 @@ class BreadcrumbsBuilder {
 				'yes'
 			) === 'yes';
 
-			if (! $has_single) {
+			if (!$has_single) {
 				array_pop($return);
 			}
 		} elseif (is_single()) {
@@ -119,7 +122,7 @@ class BreadcrumbsBuilder {
 				$this->get_custom_post_type_archive()
 			);
 
-			if ($has_single_taxonomy && ! empty($taxonomies)) {
+			if ($has_single_taxonomy && !empty($taxonomies)) {
 				if (empty($slugs)) {
 					foreach ($taxonomies as $key => $tax) {
 						if (
@@ -141,9 +144,10 @@ class BreadcrumbsBuilder {
 
 				$terms = wp_get_post_terms($post->ID, $slugs);
 
-				if (! empty($terms)) {
+				if (!empty($terms)) {
 					$lowest_term = $this->get_lowest_taxonomy_terms(
-						$post, $terms,
+						$post,
+						$terms,
 						$slugs[0]
 					);
 
@@ -171,7 +175,7 @@ class BreadcrumbsBuilder {
 				'yes'
 			) === 'yes';
 
-			if (! $has_single) {
+			if (!$has_single) {
 				array_pop($return);
 			}
 		} elseif (is_category()) {
@@ -181,7 +185,7 @@ class BreadcrumbsBuilder {
 				$this->get_term_hierarchy($term_id, 'category')
 			);
 
-			if (! $has_taxonomy) {
+			if (!$has_taxonomy) {
 				array_pop($tax_result);
 			}
 
@@ -214,7 +218,7 @@ class BreadcrumbsBuilder {
 				$this->get_term_hierarchy($term_id, $taxonomy)
 			);
 
-			if (! $has_taxonomy) {
+			if (!$has_taxonomy) {
 				array_pop($tax_result);
 			}
 
@@ -352,7 +356,8 @@ class BreadcrumbsBuilder {
 		return $this->post_process_breadcrumbs($return);
 	}
 
-	private function post_process_breadcrumbs($items) {
+	private function post_process_breadcrumbs($items)
+	{
 		$post_type = blocksy_manager()->post_types->is_supported_post_type([
 			'allow_built_in' => true
 		]);
@@ -432,7 +437,8 @@ class BreadcrumbsBuilder {
 	 *
 	 * @return array
 	 */
-	private function get_page_hierarchy($id, $has_single_check = true) {
+	private function get_page_hierarchy($id, $has_single_check = true)
+	{
 		$page = get_post($id);
 
 		if (empty($page) || is_wp_error($page)) {
@@ -468,7 +474,8 @@ class BreadcrumbsBuilder {
 	 *
 	 * @return array
 	 */
-	private function get_term_hierarchy($id, $taxonomy) {
+	private function get_term_hierarchy($id, $taxonomy)
+	{
 		$term = get_term($id, $taxonomy);
 
 		if (empty($term) || is_wp_error($term)) {
@@ -496,7 +503,8 @@ class BreadcrumbsBuilder {
 		return $return;
 	}
 
-	private function get_custom_post_type_archive() {
+	private function get_custom_post_type_archive()
+	{
 		$return = [];
 
 		$post_type = get_post_type();
@@ -510,7 +518,7 @@ class BreadcrumbsBuilder {
 			$post_type_object->has_archive
 		) {
 			// Add support for a non-standard label of 'archive_title' (special use case).
-			$label = ! empty(
+			$label = !empty(
 				$post_type_object->labels->archive_title
 			) ? $post_type_object->labels->archive_title : $post_type_object->labels->name;
 
@@ -535,7 +543,8 @@ class BreadcrumbsBuilder {
 	 * Returns the lowest hierarchical term
 	 * @return array
 	 */
-	private function get_lowest_taxonomy_terms($post, $terms, $taxonomy) {
+	private function get_lowest_taxonomy_terms($post, $terms, $taxonomy)
+	{
 		$post_id = $post->ID;
 
 		$primary_term = null;
@@ -569,19 +578,20 @@ class BreadcrumbsBuilder {
 			$primary_term = (!empty($primary_cat_id)) ? get_term($primary_cat_id, 'category') : '';
 		}
 
-		if ($primary_term && ! is_wp_error($primary_term)) {
+		if ($primary_term && !is_wp_error($primary_term)) {
 			return [$primary_term];
 		}
 
 		// if terms is not array or its empty don't proceed
-		if (! is_array($terms) || empty($terms)) {
+		if (!is_array($terms) || empty($terms)) {
 			return false;
 		}
 
 		return $this->filter_terms($terms);
 	}
 
-	private function filter_terms($terms) {
+	private function filter_terms($terms)
+	{
 		$return_terms = array();
 		$term_ids = array();
 
@@ -590,7 +600,7 @@ class BreadcrumbsBuilder {
 		}
 
 		foreach ($terms as $t) {
-			if ($t->parent == false || !in_array($t->parent,$term_ids)) {
+			if ($t->parent == false || !in_array($t->parent, $term_ids)) {
 				// remove this term
 			} else {
 				$return_terms[] = $t;
@@ -608,7 +618,8 @@ class BreadcrumbsBuilder {
 	 * Returns the breadcrumbs array
 	 * @return string
 	 */
-	public function get_breadcrumbs() {
+	public function get_breadcrumbs()
+	{
 		$result = $this->build_breadcrumbs();
 
 		if (class_exists('WC_Breadcrumb')) {
@@ -624,12 +635,12 @@ class BreadcrumbsBuilder {
 				apply_filters(
 					'woocommerce_breadcrumb_defaults',
 					[
-						'delimiter'   => '&nbsp;&#47;&nbsp;',
+						'delimiter' => '&nbsp;&#47;&nbsp;',
 						'wrap_before' => '<nav class="woocommerce-breadcrumb">',
-						'wrap_after'  => '</nav>',
-						'before'      => '',
-						'after'       => '',
-						'home'        => _x( 'Home', 'breadcrumb', 'blocksy' ),
+						'wrap_after' => '</nav>',
+						'before' => '',
+						'after' => '',
+						'home' => _x('Home', 'breadcrumb', 'blocksy'),
 					]
 				)
 			);
@@ -638,7 +649,8 @@ class BreadcrumbsBuilder {
 		return $result;
 	}
 
-	public function render($args = []) {
+	public function render($args = [])
+	{
 		$args = wp_parse_args($args, [
 			'class' => '',
 			'style' => ''
@@ -648,13 +660,13 @@ class BreadcrumbsBuilder {
 
 		$class = 'ct-breadcrumbs';
 
-		if (! empty($args['class'])) {
+		if (!empty($args['class'])) {
 			$class .= ' ' . $args['class'];
 		}
 
 		$style = '';
 
-		if (! empty($args['style'])) {
+		if (!empty($args['style'])) {
 			$style .= 'style="' . $args['style'] . '"';
 		}
 
@@ -667,7 +679,7 @@ class BreadcrumbsBuilder {
 			rank_math_the_breadcrumbs();
 			$content = ob_get_clean();
 
-			if (! empty($content)) {
+			if (!empty($content)) {
 				return '<div class="' . $class . '" data-source="' . $source . '" ' . $style . '>' . $content . '</div>';
 			}
 		}
@@ -681,7 +693,7 @@ class BreadcrumbsBuilder {
 			yoast_breadcrumb('<div class="' . $class . '" data-source="' . $source . '" ' . $style . '>', '</div>');
 			$content = ob_get_clean();
 
-			if (! empty($content)) {
+			if (!empty($content)) {
 				return $content;
 			}
 		}
@@ -736,179 +748,188 @@ class BreadcrumbsBuilder {
 
 		?>
 
-			<nav class="<?php echo $class ?>" data-source="<?php echo $source; ?>" <?php echo $style; ?> <?php echo blocksy_schema_org_definitions('breadcrumb_list') ?>><?php
+		<nav class="<?php echo $class ?>" data-source="<?php echo $source; ?>" <?php echo $style; ?> 		<?php echo blocksy_schema_org_definitions('breadcrumb_list') ?>>
+			<?php
 
-				for ($i = 0; $i < count($items); $i++) {
-					if ($i === (count($items) - 1)) {
-						$should_be_link = false;
+			for ($i = 0; $i < count($items); $i++) {
+				if (isset($items[$i]['url'])) {
+					$url = str_replace('/product-category', '', $items[$i]['url']);
+					
+					$response = wp_remote_get($url);
+					if (is_array($response) && !is_wp_error($response)) {
+						$url = $items[$i]['url'];
+					} 
+				}
+				if ($i === (count($items) - 1)) {
+					$should_be_link = false;
 
-						if (is_single() || blocksy_is_page()) {
-							$has_single = blocksy_get_theme_mod(
-								'breadcrumb_page_title',
-								'yes'
-							) === 'yes';
+					if (is_single() || blocksy_is_page()) {
+						$has_single = blocksy_get_theme_mod(
+							'breadcrumb_page_title',
+							'yes'
+						) === 'yes';
 
-							if (! $has_single) {
-								$should_be_link = true;
-							}
+						if (!$has_single) {
+							$should_be_link = true;
 						}
+					}
 
-						if (is_category() || is_tag() || is_tax()) {
-							$has_taxonomy = blocksy_get_theme_mod(
-								'breadcrumb_taxonomy_title',
-								'yes'
-							) === 'yes';
+					if (is_category() || is_tag() || is_tax()) {
+						$has_taxonomy = blocksy_get_theme_mod(
+							'breadcrumb_taxonomy_title',
+							'yes'
+						) === 'yes';
 
-							if (! $has_taxonomy) {
-								$should_be_link = true;
-							}
+						if (!$has_taxonomy) {
+							$should_be_link = true;
 						}
+					}
 
-						echo '<span class="last-item" aria-current="page" ' . blocksy_schema_org_definitions('breadcrumb_item') . '>';
+					echo '<span class="last-item" aria-current="page" ' . blocksy_schema_org_definitions('breadcrumb_item') . '>';
 
-						if (blocksy_has_schema_org_markup()) {
-							echo '<meta itemprop="position" content="' . ($i + 1) . '">';
-						}
+					if (blocksy_has_schema_org_markup()) {
+						echo '<meta itemprop="position" content="' . ($i + 1) . '">';
+					}
 
-						if (isset($items[$i]['url']) && $should_be_link) {
-							echo '<a href="' . esc_attr( $items[ $i ]['url'] ) . '" ' . blocksy_schema_org_definitions('item'). '>';
+					if (isset($items[$i]['url']) && $should_be_link) {
+						echo '<a href="' . esc_attr($url) . '" ' . blocksy_schema_org_definitions('item') . '>';
 
-							$span_attr = blocksy_schema_org_definitions('name', [
-								'array' => true
-							]);
-
-							if (
-								isset($items[$i]['icon'])
-								&&
-								! empty($items[$i]['icon'])
-							) {
-								$span_attr['class'] = 'screen-reader-text';
-								echo $items[$i]['icon'];
-							}
-
-							echo '<span ' . blocksy_attr_to_html($span_attr) . '>';
-							echo $items[ $i ]['name'];
-							echo '</span>';
-
-							echo '</a>';
-						} else {
-							$span_attr = blocksy_schema_org_definitions('name', [
-								'array' => true
-							]);
-
-							if (
-								isset($items[$i]['icon'])
-								&&
-								! empty($items[$i]['icon'])
-							) {
-								$span_attr['class'] = 'screen-reader-text';
-								echo $items[$i]['icon'];
-							}
-
-							echo '<span ' . blocksy_attr_to_html($span_attr) . '>';
-							echo $items[ $i ]['name'];
-							echo '</span>';
-						}
+						$span_attr = blocksy_schema_org_definitions('name', [
+							'array' => true
+						]);
 
 						if (
-							blocksy_has_schema_org_markup()
+							isset($items[$i]['icon'])
 							&&
-							isset($items[$i]['url'])
+							!empty($items[$i]['icon'])
 						) {
-							echo '<meta itemprop="url" content="' . esc_attr( $items[ $i ]['url'] ) . '"/>';
+							$span_attr['class'] = 'screen-reader-text';
+							echo $items[$i]['icon'];
 						}
 
+						echo '<span ' . blocksy_attr_to_html($span_attr) . '>';
+						echo $items[$i]['name'];
 						echo '</span>';
-					} else if ($i === 0) {
-						echo '<span class="first-item" ' .  blocksy_schema_org_definitions('breadcrumb_item') . '>';
 
-						if (blocksy_has_schema_org_markup()) {
-							echo '<meta itemprop="position" content="' . ($i + 1) . '">';
-						}
-
-						if (isset($items[$i]['url'])) {
-							echo '<a href="' . esc_attr($items[$i]['url']) . '" ' . blocksy_schema_org_definitions('item') . '>';
-
-							$span_attr = blocksy_schema_org_definitions('name', [
-								'array' => true
-							]);
-
-							if (
-								isset($items[$i]['icon'])
-								&&
-								! empty($items[$i]['icon'])
-							) {
-								$span_attr['class'] = 'screen-reader-text';
-								echo $items[$i]['icon'];
-							}
-
-							echo '<span ' . blocksy_attr_to_html($span_attr) . '>';
-							echo $items[$i]['name'];
-							echo '</span>';
-
-							echo '</a>';
-						} else {
-							echo $items[$i]['name'];
-						}
-
-						if (
-							blocksy_has_schema_org_markup()
-							&&
-							isset($items[$i]['url'])
-						) {
-							echo '<meta itemprop="url" content="' . esc_attr($items[$i]['url']) . '"/>';
-						}
-
-						echo $separator;
-
-						echo '</span>';
+						echo '</a>';
 					} else {
-						echo '<span class="item-' . ($i - 1) . '"' . blocksy_schema_org_definitions('breadcrumb_item') . '>';
-
-						if (blocksy_has_schema_org_markup()) {
-							echo '<meta itemprop="position" content="' . ($i + 1) . '">';
-						}
-
-						if (isset($items[$i]['url'])) {
-							echo '<a href="' . esc_attr( $items[ $i ]['url'] ) . '" ' . blocksy_schema_org_definitions('item') . '>';
-
-							$span_attr = blocksy_schema_org_definitions('name', [
-								'array' => true
-							]);
-
-							if (
-								isset($items[$i]['icon'])
-								&&
-								! empty($items[$i]['icon'])
-							) {
-								$span_attr['class'] = 'screen-reader-text';
-								echo $items[$i]['icon'];
-							}
-
-							echo '<span ' . blocksy_attr_to_html($span_attr) . '>';
-							echo $items[ $i ]['name'];
-							echo '</span>';
-
-							echo '</a>';
-						} else {
-							echo $items[$i]['name'];
-						}
+						$span_attr = blocksy_schema_org_definitions('name', [
+							'array' => true
+						]);
 
 						if (
-							blocksy_has_schema_org_markup()
+							isset($items[$i]['icon'])
 							&&
-							isset($items[$i]['url'])
+							!empty($items[$i]['icon'])
 						) {
-							echo '<meta itemprop="url" content="' . esc_attr( $items[ $i ]['url'] ) . '"/>';
+							$span_attr['class'] = 'screen-reader-text';
+							echo $items[$i]['icon'];
 						}
 
-						echo $separator;
-
+						echo '<span ' . blocksy_attr_to_html($span_attr) . '>';
+						echo $items[$i]['name'];
 						echo '</span>';
 					}
 
-				} ?>
-			</nav>
+					if (
+						blocksy_has_schema_org_markup()
+						&&
+						isset($items[$i]['url'])
+					) {
+						echo '<meta itemprop="url" content="' . esc_attr($url) . '"/>';
+					}
+
+					echo '</span>';
+				} else if ($i === 0) {
+					echo '<span class="first-item" ' . blocksy_schema_org_definitions('breadcrumb_item') . '>';
+
+					if (blocksy_has_schema_org_markup()) {
+						echo '<meta itemprop="position" content="' . ($i + 1) . '">';
+					}
+
+					if (isset($items[$i]['url'])) {
+						echo '<a href="' . esc_attr($url) . '" ' . blocksy_schema_org_definitions('item') . '>';
+
+						$span_attr = blocksy_schema_org_definitions('name', [
+							'array' => true
+						]);
+
+						if (
+							isset($items[$i]['icon'])
+							&&
+							!empty($items[$i]['icon'])
+						) {
+							$span_attr['class'] = 'screen-reader-text';
+							echo $items[$i]['icon'];
+						}
+
+						echo '<span ' . blocksy_attr_to_html($span_attr) . '>';
+						echo $items[$i]['name'];
+						echo '</span>';
+
+						echo '</a>';
+					} else {
+						echo $items[$i]['name'];
+					}
+
+					if (
+						blocksy_has_schema_org_markup()
+						&&
+						isset($items[$i]['url'])
+					) {
+						echo '<meta itemprop="url" content="' . esc_attr($url) . '"/>';
+					}
+
+					echo $separator;
+
+					echo '</span>';
+				} else {
+					echo '<span class="item-' . ($i - 1) . '"' . blocksy_schema_org_definitions('breadcrumb_item') . '>';
+
+					if (blocksy_has_schema_org_markup()) {
+						echo '<meta itemprop="position" content="' . ($i + 1) . '">';
+					}
+
+					if (isset($items[$i]['url'])) {
+						echo '<a href="' . esc_attr($url) . '" ' . blocksy_schema_org_definitions('item') . '>';
+
+						$span_attr = blocksy_schema_org_definitions('name', [
+							'array' => true
+						]);
+
+						if (
+							isset($items[$i]['icon'])
+							&&
+							!empty($items[$i]['icon'])
+						) {
+							$span_attr['class'] = 'screen-reader-text';
+							echo $items[$i]['icon'];
+						}
+
+						echo '<span ' . blocksy_attr_to_html($span_attr) . '>';
+						echo $items[$i]['name'];
+						echo '</span>';
+
+						echo '</a>';
+					} else {
+						echo $items[$i]['name'];
+					}
+
+					if (
+						blocksy_has_schema_org_markup()
+						&&
+						isset($items[$i]['url'])
+					) {
+						echo '<meta itemprop="url" content="' . esc_attr($url) . '"/>';
+					}
+
+					echo $separator;
+
+					echo '</span>';
+				}
+
+			} ?>
+		</nav>
 
 		<?php
 
